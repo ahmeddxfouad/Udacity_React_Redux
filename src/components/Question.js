@@ -1,10 +1,4 @@
 import { connect } from "react-redux";
-import { formatQuestion } from "../utils/_DATA";
-import {
-  TiArrowBackOutline,
-  TiHeartOutline,
-  TiHeartFullOutline,
-} from "react-icons/ti";
 import { handleSaveQuestionAnswer } from "../actions/questions";
 import { useNavigate, Link } from "react-router-dom";
 import { formatDate } from "../utils/helpers";
@@ -38,13 +32,8 @@ const Question = (props) => {
 
   const {
     author,
-    text,
     timestamp,
-    hasLiked,
-    likes,
-    replies,
     id,
-    parent,
   } = props.question;
 
   return (
@@ -56,27 +45,25 @@ const Question = (props) => {
           <hr/>
           <button
               className="btn replying-to"
-              onClick={(e) => toParent(e, parent.id)}
+              onClick={(e) => toParent(e, id)}
           >
             Show
           </button>
-
         </div>
-
       </div>
     </Link>
   );
 };
 
 const mapStateToProps = ({ authedUser, users, questions }, { id }) => {
+  console.log('Questions id: ', id);
+  console.log('Questions id: ', questions[id]);
   const question = questions[id];
-  const parentQuestion = question ? questions[question.replyingTo] : null;
+  // const parentQuestion = question ? questions[question.replyingTo] : null;
 
   return {
     authedUser,
-    question: question
-      ? formatQuestion(question, users[question.author], authedUser, parentQuestion)
-      : null,
+    question: question,
   };
 };
 

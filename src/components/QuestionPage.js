@@ -2,6 +2,8 @@ import { connect } from "react-redux";
 import Question from "./Question";
 import NewQuestion from "./NewQuestion";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import authedUser from "../reducers/authedUser";
+import Answers from "./Answers";
 
 const withRouter = (Component) => {
   const ComponentWithRouterProp = (props) => {
@@ -15,32 +17,39 @@ const withRouter = (Component) => {
 };
 
 const QuestionPage = (props) => {
+
+    const {
+        author,
+        text,
+        timestamp,
+        hasLiked,
+        likes,
+        replies,
+        id,
+        parent,
+    } = props.question;
+
   return (
-    <div>
-      <Question id={props.id} />
-      <NewQuestion id={props.id} />
-      {props.replies.length !== 0 && <h3 className="center">Replies</h3>}
-      <ul>
-        {props.replies.map((replyId) => (
-          <li key={replyId}>
-            <Question id={replyId} />
-          </li>
-        ))}
-      </ul>
+    <div className="center">
+        <div className="question-info">
+            <h2>Poll by {author}</h2>
+            <img src={authedUser.avatarURL} alt={`Avatar of ${author}`} className="avatar"/>
+            <h2>Would You Rather</h2>
+            <Answers id={props.id}/>
+        </div>
     </div>
   );
 };
 
-const mapStateToProps = ({ authedUser, questions, users }, props) => {
+const mapStateToProps = ({authedUser, questions, users }, props) => {
   const { id } = props.router.params;
-
+  const question = questions[id];
+    console.log('questions: ',questions)
+    console.log('question: ',question)
   return {
     id,
-    replies: !questions[id]
-      ? []
-      : questions[id].replies.sort(
-          (a, b) => questions[b].timestamp - questions[a].timestamp
-        ),
+    question: question,
+    authedUser,
   };
 };
 

@@ -29,16 +29,21 @@ const NewQuestion = ({ dispatch, id }) => {
 
   return (
     <div>
-      <h3 className="center">Compose new Question</h3>
+      <h3 className="center">Would You Rather</h3>
+      <h4 className="center">Create Your Own Poll</h4>
       <form className="new-question" onSubmit={handleSubmit}>
-        <textarea
-          placeholder="What's happening?"
+        <h5 className="center">First Option</h5>
+        <input
+          placeholder="Option One"
           value={text}
           onChange={handleChange}
-          className="textarea"
-          maxLength={280}
         />
-        {questionLeft <= 100 && <div className="question-length">{questionLeft}</div>}
+        <h5 className="center">Second Option</h5>
+        <input
+          placeholder="Option One"
+          value={text}
+          onChange={handleChange}
+        />
         <button className="btn" type="submit" disabled={text === ""}>
           Submit
         </button>

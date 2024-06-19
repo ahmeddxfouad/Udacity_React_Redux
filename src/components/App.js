@@ -7,6 +7,7 @@ import NewQuestion from "./NewQuestion";
 import QuestionPage from "./QuestionPage";
 import Nav from "./Nav";
 import { Routes, Route } from "react-router-dom";
+import LeaderBoard from "./LeaderBoard";
 
 const App = (props) => {
     useEffect(() => {
@@ -23,6 +24,7 @@ const App = (props) => {
                         <Route path="/" exact element={<Dashboard />} />
                         <Route path="/question/:id" element={<QuestionPage />} />
                         <Route path="/new" element={<NewQuestion />} />
+                        <Route path="/leaderboard" element={<LeaderBoard />} />
                     </Routes>
                 )}
             </div>
