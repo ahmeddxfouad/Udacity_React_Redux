@@ -81,6 +81,14 @@ li {
   margin: 10px;
 }
 
+.poll-avatar{
+  height: 350px;
+  width: 350px;
+  border-radius: 25px;
+  margin: 10px;
+  align-self: center;
+}
+
 .question {
   width: 100%;
   max-width: 590px;
@@ -208,4 +216,45 @@ td {
 td img {
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.nav{
+  border-bottom: 2px solid green;
+  padding: 10px;
+  margin: 10px;
+}
+
+.nav li{
+  margin-left: 50px;
+}
+.nav li:hover{
+  text-decoration: underline;
+}
+
+.profile {
+  margin-left: auto; /* Ensures the profile section aligns to the right */
+  float: right;
+  margin-top: -45px;
+}
+
+.nav-avatar {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+.username {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.logout {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.logout:hover {
+  text-decoration: underline;
 }

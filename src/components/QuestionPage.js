@@ -33,7 +33,7 @@ const QuestionPage = (props) => {
     <div className="center">
         <div className="question-info">
             <h2>Poll by {author}</h2>
-            <img src={authedUser.avatarURL} alt={`Avatar of ${author}`} className="avatar"/>
+            <img src={props.avatar} alt={`Avatar of ${author}`} className="poll-avatar"/>
             <h2>Would You Rather</h2>
             <Answers id={props.id}/>
         </div>
@@ -44,12 +44,14 @@ const QuestionPage = (props) => {
 const mapStateToProps = ({authedUser, questions, users }, props) => {
   const { id } = props.router.params;
   const question = questions[id];
+  const avatar = users[question.author].avatarURL;
     console.log('questions: ',questions)
     console.log('question: ',question)
   return {
     id,
     question: question,
     authedUser,
+      avatar,
   };
 };
 

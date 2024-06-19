@@ -19,7 +19,7 @@ const Leaderboard = (props) => {
                         <td>
                             {user.avatarURL && <img src={user.avatarURL} alt={`Avatar of ${user.name}`} className="avatar"/>}
                             <h4>{user.name} </h4>
-                            <h7>{user.id}</h7>
+                            <h6>{user.id}</h6>
                         </td>
                         <td>{user.answered}</td>
                         <td>{user.created}</td>
