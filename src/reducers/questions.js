@@ -16,12 +16,10 @@ export default function questions(state = {}, action) {
         ...state,
         [action.id]: {
           ...state[action.id],
-          likes:
-            action.hasLiked === true
-              ? state[action.id].likes.filter(
-                  (uid) => uid !== action.authedUser
-                )
-              : state[action.id].likes.concat([action.authedUser]),
+          [action.hasLiked]: {
+            ...state[action.id][action.hasLiked],
+            votes: state[action.id][action.hasLiked].votes.concat([action.authedUser])
+          },
         },
       };
     case ADD_QUESTION:

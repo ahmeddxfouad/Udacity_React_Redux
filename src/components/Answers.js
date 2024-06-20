@@ -30,7 +30,7 @@ const Answers = (props) => {
     const handleVoteOptionOne = (e, id) => {
         e.preventDefault();
 
-        props.dispatch(handleSaveQuestionAnswer({id,authedUser: props.authedUser, hasLiked: "OptionOne" })).then(() => {
+        props.dispatch(handleSaveQuestionAnswer({id,authedUser: props.authedUser, hasLiked: "optionOne" })).then(() => {
             navigate(`/question/${id}`);
         });
 
@@ -39,7 +39,7 @@ const Answers = (props) => {
     const handleVoteOptionTwo = (e, id) => {
         e.preventDefault();
 
-        props.dispatch(handleSaveQuestionAnswer({id,authedUser: props.authedUser, hasLiked: "OptionTwo" })).then(() => {
+        props.dispatch(handleSaveQuestionAnswer({id,authedUser: props.authedUser, hasLiked: "optionTwo" })).then(() => {
             navigate(`/question/${id}`);
         });
 

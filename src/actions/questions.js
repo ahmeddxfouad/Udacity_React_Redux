@@ -39,7 +39,7 @@ function saveAnswer({ id, authedUser, hasLiked }) {
   return {
     type: SAVE_ANSWER,
     id,
-    authedUser,
+    authedUser: authedUser.id,
     hasLiked,
   };
 }
@@ -48,7 +48,7 @@ export function handleSaveQuestionAnswer(info) {
   return (dispatch) => {
     dispatch(saveAnswer(info));
 
-    return saveQuestionAnswer(info).catch((e) => {
+    return saveQuestionAnswer({authedUser: info.authedUser.id, qid: info.id, answer: info.hasLiked}).catch((e) => {
       console.warn("Error in saveQuestionAnswer: ", e);
       dispatch(saveAnswer(info));
       alert("The was an error saving the answer. Try again.");

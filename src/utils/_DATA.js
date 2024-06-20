@@ -176,14 +176,7 @@ export function _saveQuestion (question) {
         ...questions,
         [formattedQuestion.id]: formattedQuestion
       }
-      //
-      // users = {
-      //   ...users,
-      //   [question.author] : {
-      //     ...users[question.author],
-      //     questions: users[question.author].questions.push(formattedQuestion.id)
-      //   }
-      // }
+
       users[question.author].questions.push(formattedQuestion.id)
 
       resolve(formattedQuestion)
@@ -198,16 +191,8 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
     }
 
     setTimeout(() => {
-      users = {
-        ...users,
-        [authedUser]: {
-          ...users[authedUser],
-          answers: {
-            ...users[authedUser].answers,
-            [qid]: answer
-          }
-        }
-      }
+
+      users[authedUser].answers = {...users[authedUser].answers, [qid]: answer};
 
       questions = {
         ...questions,
