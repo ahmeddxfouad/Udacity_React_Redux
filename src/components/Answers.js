@@ -1,12 +1,17 @@
 import { connect } from "react-redux";
-import { formatQuestion } from "../utils/_DATA";
 import { handleSaveQuestionAnswer } from "../actions/questions";
 import { useNavigate, Link } from "react-router-dom";
 import { formatDate } from "../utils/helpers";
-import questions from "../reducers/questions";
+import { useEffect } from "react";
 
 const Answers = (props) => {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!props.authedUser) {
+            navigate("/login");
+        }
+    }, [props.authedUser, navigate]);
 
     const handleLike = (e) => {
         e.preventDefault();
@@ -22,56 +27,80 @@ const Answers = (props) => {
         );
     };
 
-    const toParent = (e, id) => {
+    const handleVoteOptionOne = (e, id) => {
         e.preventDefault();
 
-        navigate(`/question/${id}`);
+        props.dispatch(handleSaveQuestionAnswer({id,authedUser: props.authedUser, hasLiked: "OptionOne" })).then(() => {
+            navigate(`/question/${id}`);
+        });
+
     };
 
-    if (props.question === null) {
-        return <p>This Question doesn't exist</p>;
+    const handleVoteOptionTwo = (e, id) => {
+        e.preventDefault();
+
+        props.dispatch(handleSaveQuestionAnswer({id,authedUser: props.authedUser, hasLiked: "OptionTwo" })).then(() => {
+            navigate(`/question/${id}`);
+        });
+
+    };
+
+    if (!props.question) {
+        return <p>404: This Question doesn't exist</p>;
     }
 
     const {
         author,
         timestamp,
         id,
-        parent,
         optionOne,
-        optionTwo
+        optionTwo,
+        hasLiked,
     } = props.question;
+
+    const totalVotes = optionOne.votes.length + optionTwo.votes.length;
+    const optionOneVotes = optionOne.votes.length;
+    const optionTwoVotes = optionTwo.votes.length;
+    const optionOnePercentage = ((optionOneVotes / totalVotes) * 100).toFixed(2);
+    const optionTwoPercentage = ((optionTwoVotes / totalVotes) * 100).toFixed(2);
 
     return (
         <div className="container" style={{display: "flex"}}>
             <div>
-                <span className="question">{optionOne.text}</span>
-                <button
-                    className="btn replying-to"
-                    onClick={(e) => toParent(e, parent.id)}
-                >
-                    Click
-                </button>
-            </div>
-            <div>
-                <span className="question">{optionTwo.text}</span>
-                <button
-                    className="btn replying-to"
-                    onClick={(e) => toParent(e, parent.id)}
-                >
-                    Click
-                </button>
+                <div className={`question ${props.authedUser.answers[id] === "optionOne" ? "selected" : ""}`}>
+                    <span>{optionOne.text}</span>
+                    {props.hasLiked ?
+                        <div className="question">
+                    <div>Results: {optionOneVotes} out of {totalVotes} votes with {optionOnePercentage}%</div>
+                    </div> :
+                    <button className="btn replying-to" onClick={(e) => handleVoteOptionOne(e, id)}>Click</button>
+                    }
+                </div>
+                <div className={`question ${props.authedUser.answers[id] === "optionTwo" ? "selected" : ""}`}>
+                    <span>{optionTwo.text}</span>
+                    {props.hasLiked ?
+                        <div className="question">
+                            <div>Results: {optionTwoVotes} out of {totalVotes} votes with {optionTwoPercentage}%</div>
+                        </div> :
+                        <button className="btn replying-to" onClick={(e) => handleVoteOptionTwo(e, id)}>Click</button>}
+                </div>
             </div>
         </div>
     );
 };
 
-const mapStateToProps = ({authedUser, users, questions}, {id}) => {
+const mapStateToProps = ({ authedUser, users, questions }, { id }) => {
     const question = questions[id];
-    // const parentQuestion = question ? questions[question.replyingTo] : null;
-
+    const author = question ? users[question.author] : null;
+    const auth = users[authedUser];
     return {
-        authedUser,
-        question: question
+        authedUser: auth,
+        question: question ? {
+            ...question,
+            author,
+            hasLiked: question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)
+        } : null,
+        hasLiked: question.optionOne.votes.includes(authedUser) || question.optionTwo.votes.includes(authedUser)
     };
 };
 
