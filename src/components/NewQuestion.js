@@ -2,30 +2,36 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { handleAddQuestion } from "../actions/questions";
 import { useNavigate } from "react-router-dom";
+import authedUser from "../reducers/authedUser";
 
-const NewQuestion = ({ dispatch, id }) => {
+const NewQuestion = (props) => {
   const navigate = useNavigate();
-  const [text, setText] = useState("");
+  const [firstOption, setFirstOption] = useState("");
+  const [secondOption, setSecondOption] = useState("");
 
-  const handleChange = (e) => {
+  const handleFirstOption = (e) => {
     const text = e.target.value;
 
-    setText(text);
+    setFirstOption(text);
+  };
+
+  const handleSecondOption = (e) => {
+    const text = e.target.value;
+
+    setSecondOption(text);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const question = { optionOneText: firstOption,optionTwoText: secondOption };
 
-    dispatch(handleAddQuestion(text, id));
+    props.dispatch(handleAddQuestion(question, props.authedUser)).then(() => {
+      setFirstOption("");
+      setSecondOption("");
+      navigate("/home")
+    });
 
-    setText("");
-
-    if (!id) {
-      navigate("/");
-    }
   };
-
-  const questionLeft = 280 - text.length;
 
   return (
     <div>
@@ -35,16 +41,16 @@ const NewQuestion = ({ dispatch, id }) => {
         <h5 className="center">First Option</h5>
         <input
           placeholder="Option One"
-          value={text}
-          onChange={handleChange}
+          value={firstOption}
+          onChange={handleFirstOption}
         />
         <h5 className="center">Second Option</h5>
         <input
-          placeholder="Option One"
-          value={text}
-          onChange={handleChange}
+          placeholder="Option Two"
+          value={secondOption}
+          onChange={handleSecondOption}
         />
-        <button className="btn" type="submit" disabled={text === ""}>
+        <button className="btn" type="submit" disabled={firstOption === "" || secondOption === ""}>
           Submit
         </button>
       </form>
@@ -52,4 +58,13 @@ const NewQuestion = ({ dispatch, id }) => {
   );
 };
 
-export default connect()(NewQuestion);
+const mapStateToProps = ({ authedUser, users }) => {
+  const currentUser = users[authedUser];
+
+  return {
+    authedUser,
+  };
+};
+
+
+export default connect(mapStateToProps)(NewQuestion);

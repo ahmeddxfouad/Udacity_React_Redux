@@ -1,8 +1,5 @@
 import { connect } from "react-redux";
-import Question from "./Question";
-import NewQuestion from "./NewQuestion";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import authedUser from "../reducers/authedUser";
 import Answers from "./Answers";
 
 const withRouter = (Component) => {
@@ -20,13 +17,6 @@ const QuestionPage = (props) => {
 
     const {
         author,
-        text,
-        timestamp,
-        hasLiked,
-        likes,
-        replies,
-        id,
-        parent,
     } = props.question;
 
   return (
@@ -45,8 +35,7 @@ const mapStateToProps = ({authedUser, questions, users }, props) => {
   const { id } = props.router.params;
   const question = questions[id];
   const avatar = users[question.author].avatarURL;
-    console.log('questions: ',questions)
-    console.log('question: ',question)
+
   return {
     id,
     question: question,

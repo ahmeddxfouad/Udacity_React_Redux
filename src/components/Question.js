@@ -56,10 +56,7 @@ const Question = (props) => {
 };
 
 const mapStateToProps = ({ authedUser, users, questions }, { id }) => {
-  console.log('Questions id: ', id);
-  console.log('Questions id: ', questions[id]);
   const question = questions[id];
-  // const parentQuestion = question ? questions[question.replyingTo] : null;
 
   return {
     authedUser,

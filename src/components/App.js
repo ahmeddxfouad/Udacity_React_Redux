@@ -23,7 +23,6 @@ const App = (props) => {
     }, []);
 
     useEffect(() => {
-        console.log('authUSer: ',props.authedUser)
         if (props.authedUser === null ) {
             console.log("I'm inside navigate to login")
             navigate("/login");

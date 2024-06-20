@@ -1,3 +1,5 @@
+import answers from "../components/Answers";
+
 let users = {
   sarahedo: {
     id: 'sarahedo',
@@ -167,11 +169,22 @@ export function _saveQuestion (question) {
     }
 
     const formattedQuestion = formatQuestion(question)
+    let newQuestions = [...users[question.author].questions, formattedQuestion.id];
+    console.log('newusers[question.author].questions: ', newQuestions);
     setTimeout(() => {
       questions = {
         ...questions,
         [formattedQuestion.id]: formattedQuestion
       }
+      //
+      // users = {
+      //   ...users,
+      //   [question.author] : {
+      //     ...users[question.author],
+      //     questions: users[question.author].questions.push(formattedQuestion.id)
+      //   }
+      // }
+      users[question.author].questions.push(formattedQuestion.id)
 
       resolve(formattedQuestion)
     }, 1000)

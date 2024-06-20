@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import authedUser from "../reducers/authedUser";
 
 const Leaderboard = (props) => {
     return (
@@ -18,7 +17,7 @@ const Leaderboard = (props) => {
                     <tr key={user.id}>
                         <td style={{display: "flex"}}>
                             {user.avatar && <img src={user.avatar} alt={`Avatar of ${user.name}`} className="avatar"/>}
-                            <h4>{user.name} <h6>{user.id}</h6> </h4>
+                            <h4>{user.name} <i>(<span>{user.id}</span>)</i> </h4>
 
                         </td>
                         <td>{user.answered}</td>

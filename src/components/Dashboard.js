@@ -32,15 +32,10 @@ const Dashboard = (props) => {
 
 const mapStateToProps = ({ authedUser, questions, users }) => {
     const currentUser = users[authedUser];
-    console.log('authedUser', authedUser, currentUser);
-    console.log('questions', questions);
 
     const answeredQuestions = Object.keys(currentUser.answers);
     const newQuestions = Object.keys(questions).filter(qid => !answeredQuestions.includes(qid));
     const doneQuestions = Object.keys(questions).filter(qid => answeredQuestions.includes(qid));
-
-    console.log('newQuestions', newQuestions);
-    console.log('doneQuestions', doneQuestions);
 
     return {
         newQuestions: newQuestions.sort((a, b) => questions[b].timestamp - questions[a].timestamp),
