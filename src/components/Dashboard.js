@@ -1,30 +1,45 @@
 import { connect } from "react-redux";
 import Question from "./Question";
+import {useState} from "react";
+import { SlArrowDown } from "react-icons/sl";
+import { SlArrowUp } from "react-icons/sl";
 
 const Dashboard = (props) => {
+    const [toggle, setToggle] = useState(true);
+
   return (
       <div>
-          <div className="dashcontainer">
+          <div  className="dashcontainer">
+
               <h3 className="center">New Questions</h3>
+              <div className="center btn" onClick={() => setToggle(!toggle)} >
+              {toggle? <SlArrowDown /> : <SlArrowUp /> }
+              </div>
               <hr style={{color: "green"}}/>
+              {toggle ?
               <ul className="dashboard-list">
                   {props.newQuestions.map((id) => (
                       <li key={id} className="dashboard-item">
                           <Question id={id}/>
                       </li>
                   ))}
-              </ul>
+              </ul> : <br/>
+              }
           </div>
           <div className="dashcontainer">
-              <h3 className="center">Done</h3>
+              <h3 className="center">Done </h3>
+              <div className="center btn" onClick={() => setToggle(!toggle)} >
+                  {!toggle? <SlArrowDown/> : <SlArrowUp  /> }
+              </div>
               <hr style={{color: "green"}}/>
+              {toggle ? <br/> :
               <ul className="dashboard-list">
                   {props.Done.map((id) => (
                       <li key={id} className="dashboard-item">
                           <Question id={id}/>
                       </li>
                   ))}
-              </ul>
+              </ul>}
           </div>
       </div>
   );
