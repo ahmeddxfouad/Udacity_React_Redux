@@ -1,12 +1,8 @@
-import {useEffect, useState} from "react";
+import { useState } from "react";
 import { connect } from "react-redux";
-import { handleAddQuestion } from "../actions/questions";
-import { useNavigate } from "react-router-dom";
-import authedUser from "../reducers/authedUser";
-import {handleInitialData, handlePreLogin} from "../actions/shared";
+import { handleInitialData } from "../actions/shared";
 
-const Login = ({dispatch, users}) => {
-    const navigate = useNavigate();
+const Login = ({dispatch, users }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -27,9 +23,7 @@ const Login = ({dispatch, users}) => {
         if(users[username] && users[username].password === password){
             console.log("Things Went Well! you're logged in");
             const userId = users[username];
-            dispatch(handleInitialData(userId)).then(() => {
-                navigate("/home")
-            });
+            dispatch(handleInitialData(userId));
 
         }
         else{
