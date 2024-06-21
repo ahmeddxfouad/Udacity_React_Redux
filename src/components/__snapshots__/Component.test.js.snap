@@ -1,0 +1,836 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Leaderboard Component  renders Leaderboard correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="tableContainer"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Users
+              </th>
+              <th>
+                Answered
+              </th>
+              <th>
+                Created
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Sarah Edo"
+                  class="avatar"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeBQJNbpRoPUsjSDe7qiLV8-JyFooRqCkUJQ&s"
+                />
+                <h4>
+                  Sarah Edo
+                   
+                  <i>
+                    (
+                    <span>
+                      sarahedo
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Mike Tsamis"
+                  class="avatar"
+                  src="https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
+                />
+                <h4>
+                  Mike Tsamis
+                   
+                  <i>
+                    (
+                    <span>
+                      mtsamis
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Tyler McGinnis"
+                  class="avatar"
+                  src="https://static.vecteezy.com/system/resources/previews/002/002/403/large_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+                />
+                <h4>
+                  Tyler McGinnis
+                   
+                  <i>
+                    (
+                    <span>
+                      tylermcginnis
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Zenobia Oshikanlu"
+                  class="avatar"
+                  src="https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
+                />
+                <h4>
+                  Zenobia Oshikanlu
+                   
+                  <i>
+                    (
+                    <span>
+                      zoshikanlu
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="tableContainer"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Users
+            </th>
+            <th>
+              Answered
+            </th>
+            <th>
+              Created
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Sarah Edo"
+                class="avatar"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeBQJNbpRoPUsjSDe7qiLV8-JyFooRqCkUJQ&s"
+              />
+              <h4>
+                Sarah Edo
+                 
+                <i>
+                  (
+                  <span>
+                    sarahedo
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              4
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Mike Tsamis"
+                class="avatar"
+                src="https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
+              />
+              <h4>
+                Mike Tsamis
+                 
+                <i>
+                  (
+                  <span>
+                    mtsamis
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Tyler McGinnis"
+                class="avatar"
+                src="https://static.vecteezy.com/system/resources/previews/002/002/403/large_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+              />
+              <h4>
+                Tyler McGinnis
+                 
+                <i>
+                  (
+                  <span>
+                    tylermcginnis
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              2
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Zenobia Oshikanlu"
+                class="avatar"
+                src="https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
+              />
+              <h4>
+                Zenobia Oshikanlu
+                 
+                <i>
+                  (
+                  <span>
+                    zoshikanlu
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Login Component renders initial login form correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="center"
+      >
+        <h3
+          class="center"
+        >
+          Employee Polls
+        </h3>
+        <img
+          alt="Avatar of "
+          src="https://cdn4.iconfinder.com/data/icons/hr-recruitment-management/400/SET-04-512.png"
+          style="width: 300px;"
+        />
+        <h3
+          class="center"
+        >
+          Login
+        </h3>
+        <form
+          class="new-question"
+        >
+          <h5
+            class="center"
+          >
+            User
+          </h5>
+          <input
+            placeholder="User"
+            value=""
+          />
+          <h5
+            class="center"
+          >
+            Password
+          </h5>
+          <input
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+          <button
+            class="btn"
+            disabled=""
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="center"
+    >
+      <h3
+        class="center"
+      >
+        Employee Polls
+      </h3>
+      <img
+        alt="Avatar of "
+        src="https://cdn4.iconfinder.com/data/icons/hr-recruitment-management/400/SET-04-512.png"
+        style="width: 300px;"
+      />
+      <h3
+        class="center"
+      >
+        Login
+      </h3>
+      <form
+        class="new-question"
+      >
+        <h5
+          class="center"
+        >
+          User
+        </h5>
+        <input
+          placeholder="User"
+          value=""
+        />
+        <h5
+          class="center"
+        >
+          Password
+        </h5>
+        <input
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <button
+          class="btn"
+          disabled=""
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Nav Component 2 renders login form with user input correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="tableContainer"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Users
+              </th>
+              <th>
+                Answered
+              </th>
+              <th>
+                Created
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Sarah Edo"
+                  class="avatar"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeBQJNbpRoPUsjSDe7qiLV8-JyFooRqCkUJQ&s"
+                />
+                <h4>
+                  Sarah Edo
+                   
+                  <i>
+                    (
+                    <span>
+                      sarahedo
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                4
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Mike Tsamis"
+                  class="avatar"
+                  src="https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
+                />
+                <h4>
+                  Mike Tsamis
+                   
+                  <i>
+                    (
+                    <span>
+                      mtsamis
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Tyler McGinnis"
+                  class="avatar"
+                  src="https://static.vecteezy.com/system/resources/previews/002/002/403/large_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+                />
+                <h4>
+                  Tyler McGinnis
+                   
+                  <i>
+                    (
+                    <span>
+                      tylermcginnis
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                2
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="display: flex;"
+              >
+                <img
+                  alt="Avatar of Zenobia Oshikanlu"
+                  class="avatar"
+                  src="https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
+                />
+                <h4>
+                  Zenobia Oshikanlu
+                   
+                  <i>
+                    (
+                    <span>
+                      zoshikanlu
+                    </span>
+                    )
+                  </i>
+                   
+                </h4>
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                0
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="tableContainer"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Users
+            </th>
+            <th>
+              Answered
+            </th>
+            <th>
+              Created
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Sarah Edo"
+                class="avatar"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeBQJNbpRoPUsjSDe7qiLV8-JyFooRqCkUJQ&s"
+              />
+              <h4>
+                Sarah Edo
+                 
+                <i>
+                  (
+                  <span>
+                    sarahedo
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              4
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Mike Tsamis"
+                class="avatar"
+                src="https://static.vecteezy.com/system/resources/thumbnails/006/487/917/small_2x/man-avatar-icon-free-vector.jpg"
+              />
+              <h4>
+                Mike Tsamis
+                 
+                <i>
+                  (
+                  <span>
+                    mtsamis
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              3
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Tyler McGinnis"
+                class="avatar"
+                src="https://static.vecteezy.com/system/resources/previews/002/002/403/large_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+              />
+              <h4>
+                Tyler McGinnis
+                 
+                <i>
+                  (
+                  <span>
+                    tylermcginnis
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              2
+            </td>
+            <td>
+              2
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="display: flex;"
+            >
+              <img
+                alt="Avatar of Zenobia Oshikanlu"
+                class="avatar"
+                src="https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
+              />
+              <h4>
+                Zenobia Oshikanlu
+                 
+                <i>
+                  (
+                  <span>
+                    zoshikanlu
+                  </span>
+                  )
+                </i>
+                 
+              </h4>
+            </td>
+            <td>
+              1
+            </td>
+            <td>
+              0
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

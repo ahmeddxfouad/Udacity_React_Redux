@@ -14,6 +14,7 @@ const MainPage = (props) => {
         <div className="container">
             <Routes>
                 <Route path="/home" exact element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/question/:id" element={<QuestionPage />} />
                 <Route path="/notfound" element={<PageNotFound />} />
                 <Route path="/new" element={<NewQuestion />} />

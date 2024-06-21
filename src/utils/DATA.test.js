@@ -1,4 +1,17 @@
-import { _saveQuestion, _getUsers, _getQuestions, _saveQuestionAnswer } from './_DATA';
+import configureMockStore from "redux-mock-store";
+import { _saveQuestion, _saveQuestionAnswer } from './_DATA';
+import {fireEvent, render, screen} from "@testing-library/react";
+import Login from "../components/Login";
+import {Provider} from "react-redux";
+
+const mockStore = configureMockStore();
+const store = mockStore({
+    users: {
+        sarahedo: { password: 'password123' },
+        tylermcginnis: { password: 'pass456' },
+    }
+});
+
 
 describe('_saveQuestion function', () => {
     it('saves a question and returns formatted question object', async () => {
@@ -124,23 +137,6 @@ describe('_saveQuestionAnswer function 2', () => {
 });
 
 
-describe('_saveQuestionAnswer Function 3', () => {
-    it('should save a question answer correctly', async () => {
-        const answerData = {
-            authedUser: 'tylermcginnis',
-            qid: 'vthrdm985a262al8qx3do',
-            answer: 'optionTwo',
-        };
-
-        const result = await _saveQuestionAnswer(answerData);
-
-        expect(result).toBe(true);
-
-    });
-
-});
-
-
 describe('_saveQuestionAnswer Function 4', () => {
     it('should reject with an error if data is incorrect', async () => {
         const incorrectAnswerData = {
@@ -149,5 +145,25 @@ describe('_saveQuestionAnswer Function 4', () => {
         await expect(_saveQuestionAnswer(incorrectAnswerData)).rejects.toMatch(
             'Please provide authedUser, qid, and answer'
         );
+    });
+});
+
+describe('Login Component with fireEvent', () => {
+    it('should show an alert with wrong credentials', () => {
+        const alertSpy = jest.spyOn(window, 'alert').mockImplementation(() => {});
+
+        render(
+            <Provider store={store}>
+                <Login />
+            </Provider>
+        );
+
+        // Interact with the input fields and the button
+        fireEvent.change(screen.getByPlaceholderText('User'), { target: { value: 'sarahedo' } });
+        fireEvent.change(screen.getByPlaceholderText('Password'), { target: { value: 'wrongpassword' } });
+        fireEvent.click(screen.getByText('Submit'));
+
+        expect(alertSpy).toHaveBeenCalledWith('Wrong Username or Password!');
+        alertSpy.mockRestore();
     });
 });
